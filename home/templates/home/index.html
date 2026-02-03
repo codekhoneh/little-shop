@@ -1,0 +1,687 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Home{% endblock %}
+{% block content %}
+	<body class="home">
+
+		<!-- Navbar -->
+		<nav class="navbar navbar-expand-lg navbar-light mt-3">
+			<div class="container">
+				<a class="navbar-brand" href="#">Little Shopper</a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+						<li class="nav-item">
+							<a class="nav-link active" aria-current="page" href="index.html">Home</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="about.html">About</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="shop.html">Shop</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="blog.html">Blog</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="contact.html">Contact</a>
+						</li>
+					</ul>
+					<!-- Currency Toggler For Mobile -->
+					<div class="d-lg-none">
+						<div data-bs-toggle="collapse" data-bs-target="#mobile_currency_toggle" aria-expanded="false" aria-controls="mobile_currency_toggle" role="button">
+							USD <i class="ri-arrow-down-s-fill ri-middle"></i>
+						</div>
+						<div class="collapse" id="mobile_currency_toggle">
+							<div class="card card-body">
+								<ul class="list-unstyled mb-0">
+									<li><a class="link-dark text-decoration-none" href="#">USD</a></li>
+									<li><a class="link-dark text-decoration-none" href="#">CAD</a></li>
+									<li><a class="link-dark text-decoration-none" href="#">AUD</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<!-- End Currency Toggler For Mobile -->
+
+					<!-- Cart Button -->
+					<div class="nav-cart me-lg-3 mt-3 mt-lg-0" data-bs-toggle="modal" data-bs-target="#cart_modal">
+						<div class="cart-icon order-lg-2 me-2 me-lg-0">
+							<i class="ri-shopping-bag-fill"></i>
+							<div class="item-badge">3</div>
+						</div>
+						<div class="cart-amount order-lg-1 me-lg-2">$85.00</div>
+					</div>
+					<!-- End Cart Button -->
+
+					<!-- Search Button -->
+					<div class="nav-search mt-3 mt-lg-0" data-bs-toggle="modal" data-bs-target="#search_modal">
+						<i class="ri-search-line"></i>
+					</div>
+					<!-- End Search Button -->
+				</div>
+			</div>
+		</nav>
+		<!-- End Navbar -->
+
+		<main>
+			<!-- Top Section -->
+			<section class="top mt-4">
+				<div class="container">
+					<div class="header-card bg-white p-4">
+						<div class="row">
+							<div class="col-md-6">
+								<div class="p-md-5 text-center text-md-start">
+									<!-- Carousel Images -->
+									<div class="owl-carousel">
+										<img src='{% static "img/slider-800x400-1.png" %}' alt="Product Title" class="img-fluid" data-index="1" />
+										<img src='{% static "img/slider-800x400-2.png" %}' alt="Product Title" class="img-fluid" data-index="2" />
+										<img src='{% static "img/slider-800x400-3.png" %}' alt="Product Title" class="img-fluid" data-index="3" />
+										<img src='{% static "img/slider-800x400-4.png" %}' alt="Product Title" class="img-fluid" data-index="4" />
+										<img src='{% static "img/slider-800x400-5.png" %}' alt="Product Title" class="img-fluid" data-index="5" />
+										<img src='{% static "img/slider-800x400-6.png" %}' alt="Product Title" class="img-fluid" data-index="6" />
+									</div>
+									<!-- End Carousel Images -->
+								</div>
+							</div>
+							<div class="col-md-6 d-flex flex-column carousel-info-wrapper">
+								<div class="position-relative h-100 z-index-99">
+									<!-- Carousel Info -->
+									<div class="carousel-info active">
+										<h1 class="title display-4 fw-normal">New Spring Fashion Collection</h1>
+										<div class="desc mb-4 fw-light">2021 top trends available</div>
+										<a href="#" class="link btn btn-dark btn-arrow">Shop Now <i class="ri-arrow-right-s-line ri-middle"></i></a>
+									</div>
+									<!-- End Carousel Info -->
+
+									<!-- Carousel Info -->
+									<div class="carousel-info">
+										<h1 class="title display-4 fw-normal">Sneakers Made Differently!</h1>
+										<div class="desc mb-4 fw-light">The best choices for men</div>
+										<a href="#" class="link btn btn-dark btn-arrow">Shop Now <i class="ri-arrow-right-s-line ri-middle"></i></a>
+									</div>
+									<!-- End Carousel Info -->
+
+									<!-- Carousel Info -->
+									<div class="carousel-info">
+										<h1 class="title display-4 fw-normal">Faster, Lighter, Stronger!</h1>
+										<div class="desc mb-4 fw-light">The new version is one of a kind</div>
+										<a href="#" class="link btn btn-dark btn-arrow">Shop Now <i class="ri-arrow-right-s-line ri-middle"></i></a>
+									</div>
+									<!-- End Carousel Info -->
+
+									<!-- Carousel Info -->
+									<div class="carousel-info">
+										<h1 class="title display-4 fw-normal">Better footware, better life</h1>
+										<div class="desc mb-4 fw-light">For those who know the value of footware</div>
+										<a href="#" class="link btn btn-dark btn-arrow">Shop Now <i class="ri-arrow-right-s-line ri-middle"></i></a>
+									</div>
+									<!-- End Carousel Info -->
+
+									<!-- Carousel Info -->
+									<div class="carousel-info">
+										<h1 class="title display-4 fw-normal">Stay Trendy, Stay Successful</h1>
+										<div class="desc mb-4 fw-light">Find out the top trends of 2021</div>
+										<a href="#" class="link btn btn-dark btn-arrow">Shop Now <i class="ri-arrow-right-s-line ri-middle"></i></a>
+									</div>
+									<!-- End Carousel Info -->
+
+									<!-- Carousel Info -->
+									<div class="carousel-info">
+										<h1 class="title display-4 fw-normal">A Better Walking Experience</h1>
+										<div class="desc mb-4 fw-light">Feel the comfort your deserve!</div>
+										<a href="#" class="link btn btn-dark btn-arrow">Shop Now <i class="ri-arrow-right-s-line ri-middle"></i></a>
+									</div>
+									<!-- End Carousel Info -->
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- End Top Section -->
+
+			<!-- Categories Section -->
+			<section class="categories mt-5">
+				<div class="container">
+					<div class="row mb-3">
+						<div class="col">
+							<h3 class="h4 text-color-auto">Our Collections:</h3>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-6 col-lg-3">
+							<a href="collection.html" class="text-decoration-none">
+								<div class="bg-primary link-badge-wrapper p-5 rounded-lg text-white position-relative">
+									<span class="small">Made in Italy</span>
+									<div class="h5">Hiking Shoes</div>
+									<img src='{% static "img/category-800x400-1.png" %}' alt="Collection Title" class="img-fluid" />
+									<span class="link-badge">
+										<i class="ri-arrow-right-s-line"></i>
+									</span>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-6 col-lg-3 mt-3 mt-md-0">
+							<a href="collection.html" class="text-decoration-none">
+								<div class="bg-warning link-badge-wrapper p-5 text-white rounded-lg position-relative">
+									<span class="small">Top Brands</span>
+									<div class="h5">Sport Collection</div>
+									<img src='{% static "img/category-800x400-2.png" %}' alt="Collection Title" class="img-fluid" />
+									<span class="link-badge">
+										<i class="ri-arrow-right-s-line"></i>
+									</span>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-6 col-lg-3 mt-3 mt-lg-0">
+							<a href="collection.html" class="text-decoration-none">
+								<div class="bg-warning link-badge-wrapper p-5 text-white rounded-lg position-relative">
+									<span class="small">Nike</span>
+									<div class="h5">All Sneakers</div>
+									<img src='{% static "img/category-800x400-3.png" %}' alt="Collection Title" class="img-fluid" />
+									<span class="link-badge">
+										<i class="ri-arrow-right-s-line"></i>
+									</span>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-6 col-lg-3 mt-3 mt-lg-0">
+							<a href="collection.html" class="text-decoration-none">
+								<div class="bg-warning link-badge-wrapper p-5 text-white rounded-lg position-relative">
+									<span class="small">Raising Stars</span>
+									<div class="h5">Summer Shoes</div>
+									<img src='{% static "img/category-800x400-4.png" %}' alt="Collection Title" class="img-fluid" />
+									<span class="link-badge">
+										<i class="ri-arrow-right-s-line"></i>
+									</span>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- End Categories Section -->
+
+			<!-- Latest Products -->
+			<section class="latest-products mt-5">
+				<div class="container">
+					<div class="row mb-3">
+						<div class="col">
+							<h3 class="h4 text-color-auto">Latest Products:</h3>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4">
+							<!-- Product Card -->
+							<div class="product-card bg-white">
+								<div class="card-body p-4">
+									<div class="actions d-flex justify-content-end">
+										<div class="quick-view" data-bs-toggle="modal" data-bs-target="#quick_view_modal">
+											<i class="ri-eye-fill"></i>
+											<svg height="32" width="32">
+												<circle class="circle" cx="16" cy="16" r="14" stroke="black" stroke-width="2" fill-opacity="0" />
+											</svg>
+										</div>
+										<div class="add-to-card mx-2">
+											<i class="ri-shopping-bag-fill"></i>
+											<svg height="32" width="32">
+												<circle class="circle" cx="16" cy="16" r="14" stroke="black" stroke-width="2" fill-opacity="0" />
+											</svg>
+										</div>
+										<div class="wishlist">
+											<i class="ri-heart-fill"></i>
+											<svg height="32" width="32">
+												<circle class="circle" cx="16" cy="16" r="14" stroke="black" stroke-width="2" fill-opacity="0" />
+											</svg>
+										</div>
+									</div>
+									<div class="card-image px-5 py-3 px-md-0 py-md-0 px-lg-5 py-lg-3">
+										<a href="product.html"><img src='{% static "img/shoe-800x800-1.png" %}' alt="Product Title" class="img-fluid" /></a>
+									</div>
+									<div class="pt-4 text-center position-relative">
+										<div class="card-label">
+											<a href="product.html" class="link-dark text-decoration-none"><div class="card-title h5 text-capitalize">Fomex Men's Lace Up Shoes</div></a>
+											<div class="card-price text-danger">$90.00</div>
+										</div>
+										<div class="card-desc text-muted small fw-light mt-3 text-truncate">Spotee presents you elegant and quality footwear for men.</div>
+										<div class="card-review mt-1">
+											<i class="ri-star-fill text-warning"></i>
+											<i class="ri-star-fill text-warning"></i>
+											<i class="ri-star-fill text-warning"></i>
+											<i class="ri-star-fill text-warning"></i>
+											<i class="ri-star-half-fill text-warning"></i>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- End Product Card -->
+						</div>
+
+						<div class="col-md-4 mt-3 mt-md-0">
+							<!-- Product Card -->
+							<div class="product-card bg-white">
+								<div class="card-body p-4">
+									<div class="actions d-flex justify-content-end">
+										<div class="quick-view" data-bs-toggle="modal" data-bs-target="#quick_view_modal">
+											<i class="ri-eye-fill"></i>
+											<svg height="32" width="32">
+												<circle class="circle" cx="16" cy="16" r="14" stroke="black" stroke-width="2" fill-opacity="0" />
+											</svg>
+										</div>
+										<div class="add-to-card mx-2">
+											<i class="ri-shopping-bag-fill"></i>
+											<svg height="32" width="32">
+												<circle class="circle" cx="16" cy="16" r="14" stroke="black" stroke-width="2" fill-opacity="0" />
+											</svg>
+										</div>
+										<div class="wishlist">
+											<i class="ri-heart-fill"></i>
+											<svg height="32" width="32">
+												<circle class="circle" cx="16" cy="16" r="14" stroke="black" stroke-width="2" fill-opacity="0" />
+											</svg>
+										</div>
+									</div>
+									<div class="card-image px-5 py-3 px-md-0 py-md-0 px-lg-5 py-lg-3">
+										<a href="product.html"><img src='{% static "img/shoe-800x800-2.png" %}' alt="Product Title" class="img-fluid" /></a>
+									</div>
+									<div class="pt-4 text-center position-relative">
+										<div class="card-label">
+											<a href="product.html" class="link-dark text-decoration-none"><div class="card-title h5 text-capitalize">Nike Sports Running Shoes</div></a>
+											<div class="card-price text-danger">$70.00</div>
+										</div>
+										<div class="card-desc text-muted small fw-light mt-3 text-truncate">Quality is our mission.</div>
+										<div class="card-review mt-1">
+											<i class="ri-star-fill text-warning"></i>
+											<i class="ri-star-fill text-warning"></i>
+											<i class="ri-star-fill text-warning"></i>
+											<i class="ri-star-fill text-warning"></i>
+											<i class="ri-star-half-fill text-warning"></i>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- End Product Card -->
+						</div>
+
+						<div class="col-md-4 mt-3 mt-md-0">
+							<!-- Product Card -->
+							<div class="product-card bg-white">
+								<div class="card-body p-4">
+									<div class="actions d-flex justify-content-end">
+										<div class="quick-view" data-bs-toggle="modal" data-bs-target="#quick_view_modal">
+											<i class="ri-eye-fill"></i>
+											<svg height="32" width="32">
+												<circle class="circle" cx="16" cy="16" r="14" stroke="black" stroke-width="2" fill-opacity="0" />
+											</svg>
+										</div>
+										<div class="add-to-card mx-2">
+											<i class="ri-shopping-bag-fill"></i>
+											<svg height="32" width="32">
+												<circle class="circle" cx="16" cy="16" r="14" stroke="black" stroke-width="2" fill-opacity="0" />
+											</svg>
+										</div>
+										<div class="wishlist">
+											<i class="ri-heart-fill"></i>
+											<svg height="32" width="32">
+												<circle class="circle" cx="16" cy="16" r="14" stroke="black" stroke-width="2" fill-opacity="0" />
+											</svg>
+										</div>
+									</div>
+									<div class="card-image px-5 py-3 px-md-0 py-md-0 px-lg-5 py-lg-3">
+										<a href="product.html"><img src='{% static "img/shoe-800x800-3.png" %}' alt="Product Title" class="img-fluid" /></a>
+									</div>
+									<div class="pt-4 text-center position-relative">
+										<div class="card-label">
+											<a href="product.html" class="link-dark text-decoration-none"><div class="card-title h5 text-capitalize">Super Slim Hiking Shoes</div></a>
+											<div class="card-price text-danger">$85.00</div>
+										</div>
+										<div class="card-desc text-muted small fw-light mt-3 text-truncate">Spotee presents you elegant and quality footwear for men.</div>
+										<div class="card-review mt-1">
+											<i class="ri-star-fill text-warning"></i>
+											<i class="ri-star-fill text-warning"></i>
+											<i class="ri-star-fill text-warning"></i>
+											<i class="ri-star-fill text-warning"></i>
+											<i class="ri-star-half-fill text-warning"></i>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- End Product Card -->
+						</div>
+					</div>
+					<div class="row mt-3 mt-lg-5">
+						<div class="col-md-4">
+							<!-- Product Card -->
+							<div class="product-card bg-white">
+								<div class="card-body p-4">
+									<div class="actions d-flex justify-content-end">
+										<div class="quick-view" data-bs-toggle="modal" data-bs-target="#quick_view_modal">
+											<i class="ri-eye-fill"></i>
+											<svg height="32" width="32">
+												<circle class="circle" cx="16" cy="16" r="14" stroke="black" stroke-width="2" fill-opacity="0" />
+											</svg>
+										</div>
+										<div class="add-to-card mx-2">
+											<i class="ri-shopping-bag-fill"></i>
+											<svg height="32" width="32">
+												<circle class="circle" cx="16" cy="16" r="14" stroke="black" stroke-width="2" fill-opacity="0" />
+											</svg>
+										</div>
+										<div class="wishlist">
+											<i class="ri-heart-fill"></i>
+											<svg height="32" width="32">
+												<circle class="circle" cx="16" cy="16" r="14" stroke="black" stroke-width="2" fill-opacity="0" />
+											</svg>
+										</div>
+									</div>
+									<div class="card-image px-5 py-3 px-md-0 py-md-0 px-lg-5 py-lg-3">
+										<a href="product.html"><img src='{% static "img/shoe-800x800-4.png" %}' alt="Product Title" class="img-fluid" /></a>
+									</div>
+									<div class="pt-4 text-center position-relative">
+										<div class="card-label">
+											<a href="product.html" class="link-dark text-decoration-none"><div class="card-title h5 text-capitalize">Reebok Flat Sneakers</div></a>
+											<div class="card-price text-danger">$70.00</div>
+										</div>
+										<div class="card-desc text-muted small fw-light mt-3 text-truncate">Make walking a pleasure!</div>
+										<div class="card-review mt-1">
+											<i class="ri-star-fill text-warning"></i>
+											<i class="ri-star-fill text-warning"></i>
+											<i class="ri-star-fill text-warning"></i>
+											<i class="ri-star-fill text-warning"></i>
+											<i class="ri-star-half-fill text-warning"></i>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- End Product Card -->
+						</div>
+
+						<div class="col-md-4 mt-3 mt-md-0">
+							<!-- Product Card -->
+							<div class="product-card bg-white">
+								<div class="card-body p-4">
+									<div class="actions d-flex justify-content-end">
+										<div class="quick-view" data-bs-toggle="modal" data-bs-target="#quick_view_modal">
+											<i class="ri-eye-fill"></i>
+											<svg height="32" width="32">
+												<circle class="circle" cx="16" cy="16" r="14" stroke="black" stroke-width="2" fill-opacity="0" />
+											</svg>
+										</div>
+										<div class="add-to-card mx-2">
+											<i class="ri-shopping-bag-fill"></i>
+											<svg height="32" width="32">
+												<circle class="circle" cx="16" cy="16" r="14" stroke="black" stroke-width="2" fill-opacity="0" />
+											</svg>
+										</div>
+										<div class="wishlist">
+											<i class="ri-heart-fill"></i>
+											<svg height="32" width="32">
+												<circle class="circle" cx="16" cy="16" r="14" stroke="black" stroke-width="2" fill-opacity="0" />
+											</svg>
+										</div>
+									</div>
+									<div class="card-image px-5 py-3 px-md-0 py-md-0 px-lg-5 py-lg-3">
+										<a href="product.html"><img src='{% static "img/shoe-800x800-5.png" %}' alt="Product Title" class="img-fluid" /></a>
+									</div>
+									<div class="pt-4 text-center position-relative">
+										<div class="card-label">
+											<a href="product.html" class="link-dark text-decoration-none"><div class="card-title h5 text-capitalize">Addidas Running Shoes</div></a>
+											<div class="card-price text-danger">$55.00</div>
+										</div>
+										<div class="card-desc text-muted small fw-light mt-3 text-truncate">Feel the power, great for sportsman!</div>
+										<div class="card-review mt-1">
+											<i class="ri-star-fill text-warning"></i>
+											<i class="ri-star-fill text-warning"></i>
+											<i class="ri-star-fill text-warning"></i>
+											<i class="ri-star-fill text-warning"></i>
+											<i class="ri-star-half-fill text-warning"></i>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- End Product Card -->
+						</div>
+
+						<div class="col-md-4 mt-3 mt-md-0">
+							<!-- Product Card -->
+							<div class="product-card bg-white">
+								<div class="card-body p-4">
+									<div class="actions d-flex justify-content-end">
+										<div class="quick-view" data-bs-toggle="modal" data-bs-target="#quick_view_modal">
+											<i class="ri-eye-fill"></i>
+											<svg height="32" width="32">
+												<circle class="circle" cx="16" cy="16" r="14" stroke="black" stroke-width="2" fill-opacity="0" />
+											</svg>
+										</div>
+										<div class="add-to-card mx-2">
+											<i class="ri-shopping-bag-fill"></i>
+											<svg height="32" width="32">
+												<circle class="circle" cx="16" cy="16" r="14" stroke="black" stroke-width="2" fill-opacity="0" />
+											</svg>
+										</div>
+										<div class="wishlist">
+											<i class="ri-heart-fill"></i>
+											<svg height="32" width="32">
+												<circle class="circle" cx="16" cy="16" r="14" stroke="black" stroke-width="2" fill-opacity="0" />
+											</svg>
+										</div>
+									</div>
+									<div class="card-image px-5 py-3 px-md-0 py-md-0 px-lg-5 py-lg-3">
+										<a href="product.html"><img src='{% static "img/shoe-800x800-6.png" %}' alt="Product Title" class="img-fluid" /></a>
+									</div>
+									<div class="pt-4 text-center position-relative">
+										<div class="card-label">
+											<a href="product.html" class="link-dark text-decoration-none"><div class="card-title h5 text-capitalize">Brooks 2021 New Model</div></a>
+											<div class="card-price text-danger">$90.00</div>
+										</div>
+										<div class="card-desc text-muted small fw-light mt-3 text-truncate">Making shoes since 1950!</div>
+										<div class="card-review mt-1">
+											<i class="ri-star-fill text-warning"></i>
+											<i class="ri-star-fill text-warning"></i>
+											<i class="ri-star-fill text-warning"></i>
+											<i class="ri-star-fill text-warning"></i>
+											<i class="ri-star-half-fill text-warning"></i>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- End Product Card -->
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- End Latest Products -->
+
+			<!-- Discount CTA Section  -->
+			<section class="discount mt-5">
+				<div class="container">
+					<div class="row">
+						<div class="col">
+							<div class="rounded-lg bg-image py-5 text-center">
+								<div class="mt-5">The Seasonal Discount</div>
+								<h2 class="display-4 fw-bold">Sales 50% Off</h2>
+								<div>Including 300+ new items!</div>
+								<a href="#" class="mt-4 mb-5 btn btn-warning">Shop Now <i class="ri-arrow-right-s-line ri-middle"></i></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- End Discount CTA Section  -->
+
+			<!-- Popular Products -->
+			<section class="popular-products mt-5">
+				<div class="container">
+					<div class="row mb-3">
+						<div class="col">
+							<h3 class="h4 text-color-auto">Popular Products:</h3>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4">
+							<!-- Product Card -->
+							<div class="product-card bg-white">
+								<div class="card-body p-4">
+									<div class="actions d-flex justify-content-end">
+										<div class="quick-view" data-bs-toggle="modal" data-bs-target="#quick_view_modal">
+											<i class="ri-eye-fill"></i>
+											<svg height="32" width="32">
+												<circle class="circle" cx="16" cy="16" r="14" stroke="black" stroke-width="2" fill-opacity="0" />
+											</svg>
+										</div>
+										<div class="add-to-card mx-2">
+											<i class="ri-shopping-bag-fill"></i>
+											<svg height="32" width="32">
+												<circle class="circle" cx="16" cy="16" r="14" stroke="black" stroke-width="2" fill-opacity="0" />
+											</svg>
+										</div>
+										<div class="wishlist">
+											<i class="ri-heart-fill"></i>
+											<svg height="32" width="32">
+												<circle class="circle" cx="16" cy="16" r="14" stroke="black" stroke-width="2" fill-opacity="0" />
+											</svg>
+										</div>
+									</div>
+									<div class="card-image px-5 py-3 px-md-0 py-md-0 px-lg-5 py-lg-3">
+										<a href="product.html"><img src='{% static "img/shoe-800x800-1.png" %}' alt="Product Title" class="img-fluid" /></a>
+									</div>
+									<div class="pt-4 text-center position-relative">
+										<div class="card-label">
+											<a href="product.html" class="link-dark text-decoration-none"><div class="card-title h5 text-capitalize">Puma Kinetica II 2021</div></a>
+											<div class="card-price text-danger">$120.00</div>
+										</div>
+										<div class="card-desc text-muted small fw-light mt-3 text-truncate">A masterpiece for professionals!</div>
+										<div class="card-review mt-1">
+											<i class="ri-star-fill text-warning"></i>
+											<i class="ri-star-fill text-warning"></i>
+											<i class="ri-star-fill text-warning"></i>
+											<i class="ri-star-fill text-warning"></i>
+											<i class="ri-star-half-fill text-warning"></i>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- End Product Card -->
+						</div>
+
+						<div class="col-md-4 mt-3 mt-md-0">
+							<!-- Product Card -->
+							<div class="product-card bg-white">
+								<div class="card-body p-4">
+									<div class="actions d-flex justify-content-end">
+										<div class="quick-view" data-bs-toggle="modal" data-bs-target="#quick_view_modal">
+											<i class="ri-eye-fill"></i>
+											<svg height="32" width="32">
+												<circle class="circle" cx="16" cy="16" r="14" stroke="black" stroke-width="2" fill-opacity="0" />
+											</svg>
+										</div>
+										<div class="add-to-card mx-2">
+											<i class="ri-shopping-bag-fill"></i>
+											<svg height="32" width="32">
+												<circle class="circle" cx="16" cy="16" r="14" stroke="black" stroke-width="2" fill-opacity="0" />
+											</svg>
+										</div>
+										<div class="wishlist">
+											<i class="ri-heart-fill"></i>
+											<svg height="32" width="32">
+												<circle class="circle" cx="16" cy="16" r="14" stroke="black" stroke-width="2" fill-opacity="0" />
+											</svg>
+										</div>
+									</div>
+									<div class="card-image px-5 py-3 px-md-0 py-md-0 px-lg-5 py-lg-3">
+										<a href="product.html"><img src='{% static "img/shoe-800x800-2.png" %}' alt="Product Title" class="img-fluid" /></a>
+									</div>
+									<div class="pt-4 text-center position-relative">
+										<div class="card-label">
+											<a href="product.html" class="link-dark text-decoration-none"><div class="card-title h5 text-capitalize">ASCICS Nano-X 2021 Model</div></a>
+											<div class="card-price text-danger">$100.00</div>
+										</div>
+										<div class="card-desc text-muted small fw-light mt-3 text-truncate">Quality is our mission.</div>
+										<div class="card-review mt-1">
+											<i class="ri-star-fill text-warning"></i>
+											<i class="ri-star-fill text-warning"></i>
+											<i class="ri-star-fill text-warning"></i>
+											<i class="ri-star-fill text-warning"></i>
+											<i class="ri-star-half-fill text-warning"></i>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- End Product Card -->
+						</div>
+
+						<div class="col-md-4 mt-3 mt-md-0">
+							<!-- Product Card -->
+							<div class="product-card bg-white">
+								<div class="card-body p-4">
+									<div class="actions d-flex justify-content-end">
+										<div class="quick-view" data-bs-toggle="modal" data-bs-target="#quick_view_modal">
+											<i class="ri-eye-fill"></i>
+											<svg height="32" width="32">
+												<circle class="circle" cx="16" cy="16" r="14" stroke="black" stroke-width="2" fill-opacity="0" />
+											</svg>
+										</div>
+										<div class="add-to-card mx-2">
+											<i class="ri-shopping-bag-fill"></i>
+											<svg height="32" width="32">
+												<circle class="circle" cx="16" cy="16" r="14" stroke="black" stroke-width="2" fill-opacity="0" />
+											</svg>
+										</div>
+										<div class="wishlist">
+											<i class="ri-heart-fill"></i>
+											<svg height="32" width="32">
+												<circle class="circle" cx="16" cy="16" r="14" stroke="black" stroke-width="2" fill-opacity="0" />
+											</svg>
+										</div>
+									</div>
+									<div class="card-image px-5 py-3 px-md-0 py-md-0 px-lg-5 py-lg-3">
+										<a href="product.html"><img src='{% static "img/shoe-800x800-3.png" %}' alt="Product Title" class="img-fluid" /></a>
+									</div>
+									<div class="pt-4 text-center position-relative">
+										<div class="card-label">
+											<a href="product.html" class="link-dark text-decoration-none"><div class="card-title h5 text-capitalize">Mika Super Slim Sneakers</div></a>
+											<div class="card-price text-danger">$65.00</div>
+										</div>
+										<div class="card-desc text-muted small fw-light mt-3 text-truncate">Mika makes thing accessible.</div>
+										<div class="card-review mt-1">
+											<i class="ri-star-fill text-warning"></i>
+											<i class="ri-star-fill text-warning"></i>
+											<i class="ri-star-fill text-warning"></i>
+											<i class="ri-star-fill text-warning"></i>
+											<i class="ri-star-half-fill text-warning"></i>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- End Product Card -->
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- End Popular Products -->
+
+			<!-- Features Section -->
+			<section class="features mt-5">
+				<div class="container">
+					<div class="row text-center bg-white mx-0 py-3 rounded-md">
+						<div class="col-md-4">
+							<i class="ri-truck-line ri-2x"></i>
+							<h4 class="fs-6 fw-normal">Free Shipping</h4>
+						</div>
+						<div class="col-md-4">
+							<i class="ri-coupon-4-line ri-2x"></i>
+							<h4 class="fs-6 fw-normal">20% Discount</h4>
+						</div>
+						<div class="col-md-4">
+							<i class="ri-refund-2-line ri-2x"></i>
+							<h4 class="fs-6 fw-normal">7 Days Refund Policy</h4>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- End Features Section -->
+		</main>
+{% endblock %}
