@@ -1,0 +1,62 @@
+{% load static %}
+<!-- Navbar -->
+		<nav class="navbar navbar-expand-lg navbar-light mt-3">
+			<div class="container">
+				<a class="navbar-brand" href="#">Little Shopper</a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+						<li class="nav-item">
+							<a class="nav-link active" aria-current="page" href="index.html">Home</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="about.html">About</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="shop.html">Shop</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="blog.html">Blog</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="contact.html">Contact</a>
+						</li>
+					</ul>
+					<!-- Currency Toggler For Mobile -->
+					<div class="d-lg-none">
+						<div data-bs-toggle="collapse" data-bs-target="#mobile_currency_toggle" aria-expanded="false" aria-controls="mobile_currency_toggle" role="button">
+							USD <i class="ri-arrow-down-s-fill ri-middle"></i>
+						</div>
+						<div class="collapse" id="mobile_currency_toggle">
+							<div class="card card-body">
+								<ul class="list-unstyled mb-0">
+									<li><a class="link-dark text-decoration-none" href="#">USD</a></li>
+									<li><a class="link-dark text-decoration-none" href="#">CAD</a></li>
+									<li><a class="link-dark text-decoration-none" href="#">AUD</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<!-- End Currency Toggler For Mobile -->
+
+					<!-- Cart Button -->
+					<div class="nav-cart me-lg-3 mt-3 mt-lg-0" data-bs-toggle="modal" data-bs-target="#cart_modal">
+						<div class="cart-icon order-lg-2 me-2 me-lg-0">
+							<i class="ri-shopping-bag-fill"></i>
+							<div class="item-badge">3</div>
+						</div>
+						<div class="cart-amount order-lg-1 me-lg-2">$85.00</div>
+					</div>
+					<!-- End Cart Button -->
+
+					<!-- Search Button -->
+					<div class="nav-search mt-3 mt-lg-0" data-bs-toggle="modal" data-bs-target="#search_modal">
+						<i class="ri-search-line"></i>
+					</div>
+					<!-- End Search Button -->
+				</div>
+			</div>
+		</nav>
+		<!-- End Navbar -->
