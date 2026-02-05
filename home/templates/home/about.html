@@ -1,138 +1,33 @@
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="x-ua-compatible" content="ie=edge">
-		<title>Little Shopper | HTML5 E-Commerce Template | About</title>
-		<meta name="description" content="Little shopper is a clean and minimal HTML5 template for e-commerce websites.">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}About Us{% endblock %}
+{% block content %}
 
-		<!-- Bootstrap -->
-		<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
-
-		<!-- Main CSS Files -->
-		<link rel="stylesheet" href="{% static 'css/main.css' %}">
-
-		<!-- Font Icons (RemixIcons) -->
-		<link rel="stylesheet" href="{% static 'fonts/remixicon.css' %}">
-
-		<!-- Favicon -->
-		<link rel="apple-touch-icon" sizes="57x57" href="{% static 'img/favicon/apple-icon-57x57.png' %}">
-		<link rel="apple-touch-icon" sizes="60x60" href="{% static 'img/favicon/apple-icon-60x60.png' %}">
-		<link rel="apple-touch-icon" sizes="72x72" href="{% static 'img/favicon/apple-icon-72x72.png' %}">
-		<link rel="apple-touch-icon" sizes="76x76" href="{% static 'img/favicon/apple-icon-76x76.png' %}">
-		<link rel="apple-touch-icon" sizes="114x114" href="{% static 'img/favicon/apple-icon-114x114.png' %}">
-		<link rel="apple-touch-icon" sizes="120x120" href="{% static 'img/favicon/apple-icon-120x120.png' %}">
-		<link rel="apple-touch-icon" sizes="144x144" href="{% static 'img/favicon/apple-icon-144x144.png' %}">
-		<link rel="apple-touch-icon" sizes="152x152" href="{% static 'img/favicon/apple-icon-152x152.png' %}">
-		<link rel="apple-touch-icon" sizes="180x180" href="{% static 'img/favicon/apple-icon-180x180.png' %}">
-		<link rel="icon" type="image/png" sizes="192x192"  href="{% static 'img/favicon/android-icon-192x192.png' %}">
-		<link rel="icon" type="image/png" sizes="32x32" href="{% static 'img/favicon/favicon-32x32.png' %}">
-		<link rel="icon" type="image/png" sizes="96x96" href="{% static 'img/favicon/favicon-96x96.png' %}">
-		<link rel="icon" type="image/png" sizes="16x16" href="{% static 'img/favicon/favicon-16x16.png' %}">
-		<link rel="manifest" href="{% static 'img/favicon/manifest.json' %}">
-		<meta name="msapplication-TileColor" content="#ffffff">
-		<meta name="msapplication-TileImage" content="{% static 'img/favicon/ms-icon-144x144.png' %}">
-		<meta name="theme-color" content="#ffffff">
-
-		<!-- Facebook OG Tags -->
-		<meta property="og:type" content="website">
-		<meta property="og:url" content="https://ineedui.com/little-shopper/about.html">
-		<meta property="og:title" content="Little Shopper | HTML5 E-Commerce Template">
-		<meta property="og:image" content="https://ineedui.com/little-shopper/img/slider-800x400-1.png">
-		<meta property="og:description" content="Little shopper is a clean and minimal HTML5 template for e-commerce websites.">
-		<meta property="og:site_name" content="Little Shopper">
-		<meta property="og:locale" content="en_US">
-		<!-- Next tags are optional but recommended -->
-		<meta property="og:image:width" content="800">
-		<meta property="og:image:height" content="400">
-
-		<!-- Twitter Card Tags -->
-		<meta name="twitter:card" content="summary">
-		<meta name="twitter:site" content="@site_account">
-		<meta name="twitter:creator" content="@individual_account">
-		<meta name="twitter:url" content="https://ineedui.com/little-shopper/about.html">
-		<meta name="twitter:title" content="Little Shopper | HTML5 E-Commerce Template">
-		<meta name="twitter:description" content="Little shopper is a clean and minimal HTML5 template for e-commerce websites.">
-		<meta name="twitter:image" content="https://ineedui.com/little-shopper/img/slider-800x400-1.png">
-
-	</head>
+	
 	<body class="about">
 
 		<!-- Navbar -->
-		<nav class="navbar navbar-expand-lg navbar-light mt-3">
-			<div class="container">
-				<a class="navbar-brand" href="#">Little Shopper</a>
-				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-				<div class="collapse navbar-collapse" id="navbarSupportedContent">
-					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-						<li class="nav-item">
-							<a class="nav-link" href="index.html">Home</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link active" aria-current="page" href="about.html">About</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="shop.html">Shop</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="blog.html">Blog</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link active" href="contact.html">Contact</a>
-						</li>
-					</ul>
-					<!-- Currency Toggler For Mobile -->
-					<div class="d-lg-none">
-						<div data-bs-toggle="collapse" data-bs-target="#mobile_currency_toggle" aria-expanded="false" aria-controls="mobile_currency_toggle" role="button">
-							USD <i class="ri-arrow-down-s-fill ri-middle"></i>
-						</div>
-						<div class="collapse" id="mobile_currency_toggle">
-							<div class="card card-body">
-								<ul class="list-unstyled mb-0">
-									<li><a class="link-dark text-decoration-none" href="#">USD</a></li>
-									<li><a class="link-dark text-decoration-none" href="#">CAD</a></li>
-									<li><a class="link-dark text-decoration-none" href="#">AUD</a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<!-- End Currency Toggler For Mobile -->
-
-					<!-- Cart Button -->
-					<div class="nav-cart me-lg-3 mt-3 mt-lg-0" data-bs-toggle="modal" data-bs-target="#cart_modal">
-						<div class="cart-icon order-lg-2 me-2 me-lg-0">
-							<i class="ri-shopping-bag-fill"></i>
-							<div class="item-badge">3</div>
-						</div>
-						<div class="cart-amount order-lg-1 me-lg-2">$85.00</div>
-					</div>
-					<!-- End Cart Button -->
-
-					<!-- Search Button -->
-					
-					<!-- End Search Button -->
-				</div>
-			</div>
-		</nav>
+		
 		<!-- End Navbar -->
 
 		<main>
 
 			<!-- About Section -->
+
+			{% if welcome %}
 			<section class="top mt-4">
 				<div class="container">
 					<div class="row">
 						<div class="col-md-12">
 							<div class="bg-white rounded-lg overflow-hidden">
-								<img src="{% static 'img/about-1024x400.jpg' %}" class="img-fluid min-w-100" alt="About Company" />
+								{% if welcome.image %}
+								<img src="{{ welcome.image.url }}" class="img-fluid min-w-100" alt="About Company" />
+								{% endif %}
 								<div class="p-3 p-md-5">
 									<div class="row gx-lg-5">
 										<div class="col-md-7">
-											<h3 class="h4 text-color-auto pb-3">Welcome to Little Shopper</h3>
-											<p class="text-muted fw-light">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione error provident dolorem sunt odit voluptas quo quisquam quis repudiandae perspiciatis totam, labore?</p>
+											<h3 class="h4 text-color-auto pb-3">{{ welcome.title }}</h3>
+											<p class="text-muted fw-light">{{ welcome.description }}</p>
 											<div class="social-share-circle mt-4 pb-4">
 												<a href="#" class="facebook me-1"><i class="ri-facebook-line"></i></a>
 												<a href="#" class="twitter me-1"><i class="ri-twitter-line"></i></a>
@@ -140,40 +35,41 @@
 												<a href="#" class="linkedin me-1"><i class="ri-linkedin-line"></i></a>
 											</div>
 											<blockquote class="blockquote mt-4">
-												<p><i class="ri-double-quotes-l ri-lg"></i> <span class="text-muted fw-light">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione error provident dolorem sunt odit voluptas quo quisquam quis repudiandae perspiciatis totam, labore?</span></p>
+												<p><i class="ri-double-quotes-l ri-lg"></i> <span class="text-muted fw-light">{{ welcome.description }}</span></p>
 											</blockquote>
-											<img src="{% static 'img/signature.png' %}" class="img-signature" alt="CEO Signature" />
-											<div><strong>Stephane Ford - CEO</strong></div>
+											{% if welcome.signature_image %}
+											<img src="{{ welcome.signature_image.url }}" class="img-signature" alt="CEO Signature" />
+											{% endif %}
+											<div><strong>{{ welcome.ceo_name }}</strong></div>
 										</div>
 										<div class="col-md-5 mt-3 mt-md-0">
-											<div>
-												<i class="ri-shield-flash-line ri-3x text-danger"></i>
-												<h4 class="fs-6 fw-normal">Top Brands</h4>
-												<div class="small text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
-											</div>
+											<!-- این بخش ویژگی‌ها پر میشه -->
+											{% for feature in features %}
 											<div class="mt-3">
-												<i class="ri-earth-line ri-3x text-danger"></i>
-												<h4 class="fs-6 fw-normal">Worldwide Shipping</h4>
-												<div class="small text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+												<i class="{{ feature.icon_class }} ri-3x text-danger"></i>
+												<h4 class="fs-6 fw-normal">{{ feature.title }}</h4>
+												<div class="small text-muted">{{ feature.description }}</div>
 											</div>
-											<div class="mt-3">
-												<i class="ri-open-arm-line ri-3x text-danger"></i>
-												<h4 class="fs-6 fw-normal">Happy Users</h4>
-												<div class="small text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
-											</div>
+											{% endfor %}
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
+
+					<!-- تصاویر پایین About -->
 					<div class="row mt-4 mt-lg-5">
+						{% for img in images %}
 						<div class="col">
-							<img src="{% static 'img/about-1024x400-2.jpg' %}" alt="About Company" class="img-fluid min-w-100 rounded-lg" />
+							<img src="{{ img.image.url }}" class="img-fluid min-w-100 rounded-lg" alt="About Company" />
 						</div>
+						{% endfor %}
 					</div>
 				</div>
 			</section>
+			{% endif %}
+
 			<!-- End About Section -->
 
 
@@ -181,41 +77,47 @@
 			<section class="features mt-4 mt-lg-5">
 				<div class="container">
 					<div class="row gx-lg-5 text-center bg-white mx-0 py-5 rounded-lg">
+						{% for feature in features_section1 %}
 						<div class="col-md-4 mt-3 mt-md-0">
-							<i class="ri-customer-service-line ri-3x text-danger"></i>
-							<h4 class="fs-6 fw-normal">24/7 Helpline</h4>
-							<div class="small text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+							<i class="{{ feature.icon_class }} ri-3x text-danger"></i>
+							<h4 class="fs-6 fw-normal">{{ feature.title }}</h4>
+							<div class="small text-muted">{{ feature.description }}</div>
 						</div>
-						<div class="col-md-4 mt-3 mt-md-0">
-							<i class="ri-gift-2-line ri-3x text-danger"></i>
-							<h4 class="fs-6 fw-normal">Seasonal Gifts</h4>
-							<div class="small text-muted">Culpa recusandae sit qui odio rem at! Doloribus quidem assumenda.</div>
-						</div>
-						<div class="col-md-4 mt-3 mt-md-0">
-							<i class="ri-shield-star-line ri-3x text-danger"></i>
-							<h4 class="fs-6 fw-normal">Quality Materials</h4>
-							<div class="small text-muted">Alias maiores expedita explicabo? Esse temporibus pariatur dolore.</div>
-						</div>
+						{% endfor %}
 					</div>
 				</div>
 			</section>
+
 			<!-- End Features Section -->
 
 			<!-- Discount CTA Section  -->
+			
+			{% if discount %}
 			<section class="discount mt-5">
 				<div class="container">
 					<div class="row">
 						<div class="col">
 							<div class="text-color-auto text-center">
-								<div class="mt-5">The Seasonal Discount</div>
-								<h2 class="display-4 fw-bold">Sales 50% Off</h2>
-								<div>Including 300+ new items!</div>
-								<a href="#" class="mt-4 mb-5 btn btn-warning">Shop Now <i class="ri-arrow-right-s-line ri-middle"></i></a>
+								
+								
+								<div class="mt-5">{{ discount.small_title }}</div>
+
+								<h2 class="display-4 fw-bold">{{ discount.main_title }}</h2>
+
+								<div>{{ discount.description }}</div>
+
+								<a href="{{ discount.button_link }}" class="mt-4 mb-5 btn btn-warning">
+									{{ discount.button_text }}
+									<i class="ri-arrow-right-s-line ri-middle"></i>
+								</a>
+
 							</div>
 						</div>
 					</div>
 				</div>
 			</section>
+			{% endif %}
+
 			<!-- End Discount CTA Section  -->
 
 			<!-- Categories Section -->
@@ -282,94 +184,35 @@
 
 			<!-- Features Section -->
 			<section class="features mt-5">
-				<div class="container">
-					<div class="row text-center bg-white mx-0 py-3 rounded-md">
-						<div class="col-md-4">
-							<i class="ri-truck-line ri-2x"></i>
-							<h4 class="fs-6 fw-normal">Free Shipping</h4>
-						</div>
-						<div class="col-md-4">
-							<i class="ri-coupon-4-line ri-2x"></i>
-							<h4 class="fs-6 fw-normal">20% Discount</h4>
-						</div>
-						<div class="col-md-4">
-							<i class="ri-refund-2-line ri-2x"></i>
-							<h4 class="fs-6 fw-normal">7 Days Refund Policy</h4>
+					<div class="container">
+						<div class="row text-center bg-white mx-0 py-3 rounded-md">
+							{% for feature in features_section2 %}
+							<div class="col-md-4">
+								<i class="{{ feature.icon_class }} ri-2x"></i>
+								<h4 class="fs-6 fw-normal">{{ feature.title }}</h4>
+							</div>
+							{% endfor %}
 						</div>
 					</div>
-				</div>
-			</section>
+				</section>
+
 			<!-- End Features Section -->
 		</main>
 
 		<!-- Footer -->
-		<footer class="mt-5 mb-lg-5">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-6">
-						<div class="d-flex align-items-center">
-							<div class="icon-wrapper me-2">
-								<i class="ri-phone-line"></i>
-							</div>
-							<a href="tel:+93-711-111-111" class="text-color-auto text-decoration-none" rel="nofollow">+93 (0) 711 111 111</a>
-						</div>
-						<div class="mt-1 d-flex align-items-center">
-							<div class="icon-wrapper me-2">
-								<i class="ri-mail-open-line"></i>
-							</div>
-							<a href="mailto:info@company.com" class="text-color-auto text-decoration-none" rel="nofollow">info@company.com</a>
-						</div>
-						<div class="mt-1 d-flex align-items-center">
-							<div class="icon-wrapper me-2">
-								<i class="ri-map-2-line"></i>
-							</div>
-							<address class="d-inline-block mb-0 text-color-auto">Pul-e-Surkh, Kabul, Afghanistan</address>
-						</div>
-					</div>
-					<div class="col-md-6 text-md-end mt-3 mt-lg-0">
-						<ul class="list-unstyled">
-							<li><a href="#" class="text-color-auto text-decoration-none">Shipping Policy</a></li>
-							<li><a href="#" class="text-color-auto text-decoration-none">Return Policy</a></li>
-						</ul>
-						<div class="text-color-auto">
-							<i class="ri-visa-line ri-lg"></i>
-							<i class="ri-paypal-fill ri-lg"></i>
-							<i class="ri-mastercard-fill ri-lg"></i>
-							<i class="ri-bit-coin-fill ri-lg"></i>
-						</div>
-					</div>
-				</div>
-			</div>
-		</footer>
+		
 		<!-- End Footer -->
 
 		<!-- Currency Toggler -->
-		<div class="dropend d-none d-lg-block">
-			<div id="currency_toggle" class="dropdown-toggle currency-toggle" data-bs-toggle="dropdown" aria-expanded="false" role="button">
-			  USD
-			</div>
-			<ul class="dropdown-menu" aria-labelledby="currency_toggle">
-				<li><a class="dropdown-item" href="#">USD</a></li>
-				<li><a class="dropdown-item" href="#">CAD</a></li>
-				<li><a class="dropdown-item" href="#">AUD</a></li>
-			</ul>
-		</div>
+		
 		<!-- End Currency Toggler -->
 
 		<!-- Dark Mode Toggler -->
-		<div class="dark-mode-toggle">
-			<input class="toggler toggler-light" id="dm_toggle" type="checkbox"/>
-			<label class="toggler-btn" for="dm_toggle"></label>
-		</div>
+		
 		<!-- End Dark Mode Toggler -->
 
 		<!-- Social Media Links -->
-		<div class="social-media text-center my-3 my-lg-0">
-			<a href="#" target="_blank" rel="noopener" class="text-decoration-none text-color-auto"><i class="ri-facebook-fill"></i></a>
-			<a href="#" target="_blank" rel="noopener" class="text-decoration-none text-color-auto"><i class="ri-twitter-line"></i></a>
-			<a href="#" target="_blank" rel="noopener" class="text-decoration-none text-color-auto"><i class="ri-instagram-line"></i></a>
-			<a href="#" target="_blank" rel="noopener" class="text-decoration-none text-color-auto"><i class="ri-whatsapp-line"></i></a>
-		</div>
+		
 		<!-- End Social Media Links -->
 
 		<!-- Search Modal -->
@@ -377,82 +220,24 @@
 		<!-- End Search Modal -->
 
 		<!-- Cart Modal -->
-		<div class="modal fade cart-modal" id="cart_modal" tabindex="-1" aria-labelledby="cart_label" aria-hidden="true">
-			<div class="modal-dialog modal-sm">
-				<div class="modal-content border-0 rounded-lg">
-					<div class="modal-header">
-						<h5 class="modal-title" id="cart_label">Your Cart</h5>
-						<span class="small text-muted ms-2">(3 Items)</span>
-						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-					</div>
-					<div class="modal-body">
-						<!-- Cart Item -->
-						<div class="row cart-item">
-							<div class="col-3">
-								<div class="product-thumb-wrapper">
-									<img src="{% static 'img/shoe-800x800-1.png' %}" alt="Super Sport Shoes" class="img-fluid" />
-								</div>
-							</div>
-							<div class="col-9 position-relative pe-4">
-								<div>Fomex Men's Lace Up Shoes</div>
-								<div class="text-muted small">1 x $80</div>
-								<div class="close bg-secondary">
-									<i class="ri-close-line"></i>
-								</div>
-							</div>
-						</div>
+		
 						<!-- End Cart Item -->
 
 						<!-- Cart Item -->
-						<div class="row cart-item mt-3">
-							<div class="col-3">
-								<div class="product-thumb-wrapper">
-									<img src="{% static 'img/shoe-800x800-2.png' %}" alt="Super Sport Shoes" class="img-fluid" />
-								</div>
-							</div>
-							<div class="col-9 position-relative pe-4">
-								<div>Nike Sports Running Shoes</div>
-								<div class="text-muted small">2 x $120</div>
-								<div class="close bg-secondary">
-									<i class="ri-close-line"></i>
-								</div>
-							</div>
-						</div>
+						
 						<!-- End Cart Item -->
 
 						<!-- Cart Item -->
-						<div class="row cart-item mt-3">
-							<div class="col-3">
-								<div class="product-thumb-wrapper">
-									<img src="{% static 'img/shoe-800x800-3.png' %}" alt="Super Sport Shoes" class="img-fluid" />
-								</div>
-							</div>
-							<div class="col-9 position-relative pe-4">
-								<div>Nike Sports Running Shoes</div>
-								<div class="text-muted small">1 x $100</div>
-								<div class="close bg-secondary">
-									<i class="ri-close-line"></i>
-								</div>
-							</div>
-						</div>
-						<!-- End Cart Item -->
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-dark rounded-pill flex-grow-1">View Cart <i class="ri-eye-line ri-middle ps-1"></i></button>
-						<button type="button" class="btn btn-danger rounded-pill flex-grow-1">Checkout <i class="ri-check-double-line ri-middle ps-1"></i></button>
-					</div>
-				</div>
-			</div>
-		</div>
+						
 		<!-- End Cart Modal -->
 
 		<!-- JQuery -->
-		<script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+		
 
 		<!-- Bootstrap JS -->
-		<script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
 		
 		<!-- Main JS File -->
-		<script src="{% static 'js/main.js' %}"></script>
+		
 	</body>
 </html>
+{% endblock %}
