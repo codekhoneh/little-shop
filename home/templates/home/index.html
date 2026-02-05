@@ -16,12 +16,9 @@
 								<div class="p-md-5 text-center text-md-start">
 									<!-- Carousel Images -->
 									<div class="owl-carousel">
-										<img src='{% static "img/slider-800x400-1.png" %}' alt="Product Title" class="img-fluid" data-index="1" />
-										<img src='{% static "img/slider-800x400-2.png" %}' alt="Product Title" class="img-fluid" data-index="2" />
-										<img src='{% static "img/slider-800x400-3.png" %}' alt="Product Title" class="img-fluid" data-index="3" />
-										<img src='{% static "img/slider-800x400-4.png" %}' alt="Product Title" class="img-fluid" data-index="4" />
-										<img src='{% static "img/slider-800x400-5.png" %}' alt="Product Title" class="img-fluid" data-index="5" />
-										<img src='{% static "img/slider-800x400-6.png" %}' alt="Product Title" class="img-fluid" data-index="6" />
+										{% for slide in slides %}
+											<img src="{{ slide.image.url }}" alt="{{ slide.title }}" class="img-fluid" data-index="{{ forloop.counter }}" />
+										{% endfor %}
 									</div>
 									<!-- End Carousel Images -->
 								</div>
@@ -29,52 +26,18 @@
 							<div class="col-md-6 d-flex flex-column carousel-info-wrapper">
 								<div class="position-relative h-100 z-index-99">
 									<!-- Carousel Info -->
-									<div class="carousel-info active">
-										<h1 class="title display-4 fw-normal">New Spring Fashion Collection</h1>
-										<div class="desc mb-4 fw-light">2021 top trends available</div>
-										<a href="#" class="link btn btn-dark btn-arrow">Shop Now <i class="ri-arrow-right-s-line ri-middle"></i></a>
+									{% for slide in slides %}
+									<div class="carousel-info {% if forloop.first %}active{% endif %}">
+										<h1 class="title display-4 fw-normal">{{ slide.title }}</h1>
+										<div class="desc mb-4 fw-light">{{ slide.description }}</div>
+										<a href="{{ slide.button_link }}" class="link btn btn-dark btn-arrow">
+											{{ slide.button_text }}
+										</a>
 									</div>
-									<!-- End Carousel Info -->
+									{% endfor %}
 
-									<!-- Carousel Info -->
-									<div class="carousel-info">
-										<h1 class="title display-4 fw-normal">Sneakers Made Differently!</h1>
-										<div class="desc mb-4 fw-light">The best choices for men</div>
-										<a href="#" class="link btn btn-dark btn-arrow">Shop Now <i class="ri-arrow-right-s-line ri-middle"></i></a>
-									</div>
 									<!-- End Carousel Info -->
-
-									<!-- Carousel Info -->
-									<div class="carousel-info">
-										<h1 class="title display-4 fw-normal">Faster, Lighter, Stronger!</h1>
-										<div class="desc mb-4 fw-light">The new version is one of a kind</div>
-										<a href="#" class="link btn btn-dark btn-arrow">Shop Now <i class="ri-arrow-right-s-line ri-middle"></i></a>
-									</div>
-									<!-- End Carousel Info -->
-
-									<!-- Carousel Info -->
-									<div class="carousel-info">
-										<h1 class="title display-4 fw-normal">Better footware, better life</h1>
-										<div class="desc mb-4 fw-light">For those who know the value of footware</div>
-										<a href="#" class="link btn btn-dark btn-arrow">Shop Now <i class="ri-arrow-right-s-line ri-middle"></i></a>
-									</div>
-									<!-- End Carousel Info -->
-
-									<!-- Carousel Info -->
-									<div class="carousel-info">
-										<h1 class="title display-4 fw-normal">Stay Trendy, Stay Successful</h1>
-										<div class="desc mb-4 fw-light">Find out the top trends of 2021</div>
-										<a href="#" class="link btn btn-dark btn-arrow">Shop Now <i class="ri-arrow-right-s-line ri-middle"></i></a>
-									</div>
-									<!-- End Carousel Info -->
-
-									<!-- Carousel Info -->
-									<div class="carousel-info">
-										<h1 class="title display-4 fw-normal">A Better Walking Experience</h1>
-										<div class="desc mb-4 fw-light">Feel the comfort your deserve!</div>
-										<a href="#" class="link btn btn-dark btn-arrow">Shop Now <i class="ri-arrow-right-s-line ri-middle"></i></a>
-									</div>
-									<!-- End Carousel Info -->
+									
 								</div>
 							</div>
 						</div>
@@ -436,20 +399,32 @@
 			<!-- End Latest Products -->
 
 			<!-- Discount CTA Section  -->
+			{% if discount %}
 			<section class="discount mt-5">
 				<div class="container">
 					<div class="row">
 						<div class="col">
-							<div class="rounded-lg bg-image py-5 text-center">
-								<div class="mt-5">The Seasonal Discount</div>
-								<h2 class="display-4 fw-bold">Sales 50% Off</h2>
-								<div>Including 300+ new items!</div>
-								<a href="#" class="mt-4 mb-5 btn btn-warning">Shop Now <i class="ri-arrow-right-s-line ri-middle"></i></a>
+							<div class="rounded-lg bg-image py-5 text-center"
+								style="background-image: url('{{ discount.background_image.url }}'); background-size: cover; background-position: center;">
+								
+								<div class="mt-5">{{ discount.small_title }}</div>
+
+								<h2 class="display-4 fw-bold">{{ discount.main_title }}</h2>
+
+								<div>{{ discount.description }}</div>
+
+								<a href="{{ discount.button_link }}" class="mt-4 mb-5 btn btn-warning">
+									{{ discount.button_text }}
+									<i class="ri-arrow-right-s-line ri-middle"></i>
+								</a>
+
 							</div>
 						</div>
 					</div>
 				</div>
 			</section>
+			{% endif %}
+
 			<!-- End Discount CTA Section  -->
 
 			<!-- Popular Products -->
