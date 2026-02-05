@@ -32,7 +32,7 @@ class DiscountBanner(models.Model):
     def __str__(self):
         return self.main_title
 
-
+#-------------------------about-----------------------------
 class AboutWelcome(models.Model):
     title = models.CharField(max_length=200, default="Welcome to Little Shopper")
     description = models.TextField(blank=True)
@@ -84,3 +84,28 @@ class Feature(models.Model):
         return f"{self.title} ({self.section})"
 
 
+#---------------contact--------------------------------------
+class ContactInfo(models.Model):
+    title = models.CharField(max_length=200, default="Get in touch")
+    description = models.TextField(blank=True)
+    phone = models.CharField(max_length=50, blank=True)
+    email = models.EmailField(blank=True)
+    address = models.CharField(max_length=300, blank=True)
+    map_iframe = models.TextField(blank=True, help_text="Iframe Google Map")
+    facebook = models.URLField(blank=True)
+    twitter = models.URLField(blank=True)
+    instagram = models.URLField(blank=True)
+    linkedin = models.URLField(blank=True)
+
+    def __str__(self):
+        return "Contact Info"
+
+
+class ContactMessage(models.Model):
+    name = models.CharField(max_length=100)
+    email = models.EmailField()
+    message = models.TextField()
+    submitted_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"Message from {self.name} ({self.email})"

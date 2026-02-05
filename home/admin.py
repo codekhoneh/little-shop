@@ -3,6 +3,8 @@ from .models import Slider
 from .models import DiscountBanner
 from .models import AboutWelcome, AboutFeature, AboutImage
 from .models import Feature
+from .models import ContactInfo, ContactMessage
+
 # Register your models here.
 class SliderAdmin(admin.ModelAdmin):
     list_display = ('title', 'order', 'is_active')
@@ -19,7 +21,7 @@ class DiscountBannerAdmin(admin.ModelAdmin):
 admin.site.register(DiscountBanner, DiscountBannerAdmin)
 
 
-
+#----------------------about------------------------
 
 
 class AboutWelcomeAdmin(admin.ModelAdmin):
@@ -43,3 +45,18 @@ class FeatureAdmin(admin.ModelAdmin):
     list_editable = ('order',)
     list_filter = ('section',)
 admin.site.register(Feature, FeatureAdmin)
+
+
+
+
+
+#----------------------contact------------------------
+class ContactInfoAdmin(admin.ModelAdmin):
+    list_display = ('title', 'phone', 'email', 'address')
+admin.site.register(ContactInfo, ContactInfoAdmin)
+
+
+class ContactMessageAdmin(admin.ModelAdmin):
+    list_display = ('name', 'email', 'submitted_at')
+    readonly_fields = ('name', 'email', 'message', 'submitted_at')
+admin.site.register(ContactMessage, ContactMessageAdmin)
