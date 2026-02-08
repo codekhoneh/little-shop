@@ -102,10 +102,28 @@ class ContactInfo(models.Model):
 
 
 class ContactMessage(models.Model):
+
+    STATUS_CHOICES = [
+        ('new', 'جدید'),
+        ('read', 'خوانده شده'),
+        ('replied', 'پاسخ داده شده'),
+    ]
+    
     name = models.CharField(max_length=100)
     email = models.EmailField()
     message = models.TextField()
+    status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='new')
     submitted_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f"Message from {self.name} ({self.email})"
+        return f"{self.name} - {self.status}"
+    
+
+class Reply(models.Model):
+    message = models.ForeignKey(ContactMessage, on_delete=models.CASCADE, related_name='replies')
+    responder = models.ForeignKey('auth.User', on_delete=models.CASCADE)
+    reply_text = models.TextField()
+    replied_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"Reply by {self.responder} on {self.message.name}"

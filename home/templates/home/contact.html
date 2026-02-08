@@ -49,7 +49,38 @@
 											</div>
 										</div>
 
+
 										<div class="col-md-6 mt-3 mt-md-0">
+											{% if user_messages %}
+											<div class="mb-4">
+												<h5>پیام‌ها و پاسخ‌های شما:</h5>
+												{% for message in user_messages %}
+												<div class="card mb-2">
+													<div class="card-header">
+														پیام ارسال شده در {{ message.submitted_at|date:"Y-m-d H:i" }}
+														{% if message.status == 'new' %}
+															<span class="badge bg-warning">جدید</span>
+														{% elif message.status == 'read' %}
+															<span class="badge bg-primary">خوانده شده</span>
+														{% elif message.status == 'replied' %}
+															<span class="badge bg-success">پاسخ داده شده</span>
+														{% endif %}
+													</div>
+													<div class="card-body">
+														{{ message.message }}
+														{% if message.replies.all %}
+														<div class="mt-2 border-top pt-2">
+															{% for reply in message.replies.all %}
+															<p class="text-success"><strong>{{ reply.responder.username }}:</strong> {{ reply.reply_text }}</p>
+															{% endfor %}
+														</div>
+														{% endif %}
+													</div>
+												</div>
+												{% endfor %}
+											</div>
+											{% endif %}
+
 											{% if user.is_authenticated %}
 
 											<form method="post" action="{% url 'contact' %}">

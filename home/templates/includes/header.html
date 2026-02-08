@@ -23,6 +23,11 @@
 						<li class="nav-item">
 							<a class="nav-link" href="{% url 'contact' %}">Contact</a>
 						</li>
+						{% if is_support %}
+						<li class="nav-item">
+							<a class="nav-link" href="{% url 'support_dashboard' %}">Support Dashboard</a>
+						</li>
+						{% endif %}
 					</ul>
 					<!-- Currency Toggler For Mobile -->
 					<div class="d-lg-none">
