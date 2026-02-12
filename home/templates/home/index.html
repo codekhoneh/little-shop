@@ -7,6 +7,7 @@
 		
 
 		<main>
+
 			<!-- Top Section -->
 			<section class="top mt-4">
 				<div class="container">
@@ -82,69 +83,10 @@
 				</div>
 			</section>
 			<!-- End Top Section -->
+		
 
-			<!-- Categories Section -->
-			<section class="categories mt-5">
-				<div class="container">
-					<div class="row mb-3">
-						<div class="col">
-							<h3 class="h4 text-color-auto">Our Collections:</h3>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-6 col-lg-3">
-							<a href="collection.html" class="text-decoration-none">
-								<div class="bg-primary link-badge-wrapper p-5 rounded-lg text-white position-relative">
-									<span class="small">Made in Italy</span>
-									<div class="h5">Hiking Shoes</div>
-									<img src='{% static "img/category-800x400-1.png" %}' alt="Collection Title" class="img-fluid" />
-									<span class="link-badge">
-										<i class="ri-arrow-right-s-line"></i>
-									</span>
-								</div>
-							</a>
-						</div>
-						<div class="col-md-6 col-lg-3 mt-3 mt-md-0">
-							<a href="collection.html" class="text-decoration-none">
-								<div class="bg-warning link-badge-wrapper p-5 text-white rounded-lg position-relative">
-									<span class="small">Top Brands</span>
-									<div class="h5">Sport Collection</div>
-									<img src='{% static "img/category-800x400-2.png" %}' alt="Collection Title" class="img-fluid" />
-									<span class="link-badge">
-										<i class="ri-arrow-right-s-line"></i>
-									</span>
-								</div>
-							</a>
-						</div>
-						<div class="col-md-6 col-lg-3 mt-3 mt-lg-0">
-							<a href="collection.html" class="text-decoration-none">
-								<div class="bg-warning link-badge-wrapper p-5 text-white rounded-lg position-relative">
-									<span class="small">Nike</span>
-									<div class="h5">All Sneakers</div>
-									<img src='{% static "img/category-800x400-3.png" %}' alt="Collection Title" class="img-fluid" />
-									<span class="link-badge">
-										<i class="ri-arrow-right-s-line"></i>
-									</span>
-								</div>
-							</a>
-						</div>
-						<div class="col-md-6 col-lg-3 mt-3 mt-lg-0">
-							<a href="collection.html" class="text-decoration-none">
-								<div class="bg-warning link-badge-wrapper p-5 text-white rounded-lg position-relative">
-									<span class="small">Raising Stars</span>
-									<div class="h5">Summer Shoes</div>
-									<img src='{% static "img/category-800x400-4.png" %}' alt="Collection Title" class="img-fluid" />
-									<span class="link-badge">
-										<i class="ri-arrow-right-s-line"></i>
-									</span>
-								</div>
-							</a>
-						</div>
-					</div>
-				</div>
-			</section>
-			<!-- End Categories Section -->
-
+{% include "partials/_our_collections.html" %}
+		
 			<!-- Latest Products -->
 			<section class="latest-products mt-5">
 				<div class="container">
