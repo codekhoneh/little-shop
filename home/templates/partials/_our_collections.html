@@ -10,7 +10,7 @@
     <div class="row">
       {% for c in our_collections %}
       <div class="col-md-6 col-lg-3 mt-3 mt-lg-0">
-      <a href="collection.html" class="text-decoration-none">
+      <a href="{% url 'collection' c.slug %}" class="text-decoration-none">
 
     {% if forloop.counter0|divisibleby:4 %}
       <div class="bg-primary link-badge-wrapper p-5 rounded-lg text-white position-relative">
