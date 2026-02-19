@@ -11,3 +11,104 @@
     
 {% include "includes/footer.html" %} 
 {% include "includes/footer_refrence.html" %} 
+{% block extra_js %}
+<script>
+
+if (!window.wishlistInitialized) {
+
+    window.wishlistInitialized = true;
+
+    document.addEventListener("DOMContentLoaded", function () {
+
+        document.addEventListener('click', function(e) {
+
+            const wishlistBtn = e.target.closest('.wishlist-btn');
+            if (!wishlistBtn) return;
+
+            e.preventDefault();
+
+            const productId = wishlistBtn.dataset.productId;
+            const icon = wishlistBtn.querySelector("i");
+
+            if (!icon) return;
+
+            fetch(`/wishlist/toggle/${productId}/`, {
+                method: "POST",
+                headers: {
+                    "X-CSRFToken": getCookie("csrftoken"),
+                    "Content-Type": "application/json"
+                }
+            })
+            .then(response => {
+
+                if (response.status === 401) {
+                    const next = window.location.pathname + window.location.search;
+                    window.location.href = `/account/login/?next=${encodeURIComponent(next)}`;
+                    return null;
+                }
+
+                if (!response.ok) {
+                    throw new Error("Server error");
+                }
+
+                return response.json();
+            })
+            .then(data => {
+
+                if (!data) return;
+
+                if (data.status === "added") {
+                    icon.classList.remove("ri-heart-line");
+                    icon.classList.add("ri-heart-fill");
+                    showToast('Success', 'Product added to your wishlist!', 'success');
+                }
+
+                if (data.status === "removed") {
+                    icon.classList.remove("ri-heart-fill");
+                    icon.classList.add("ri-heart-line");
+                    showToast('Removed', 'Product removed from your wishlist', 'warning');
+                }
+
+            })
+            .catch(error => {
+                console.error("Error:", error);
+                showToast('Error', 'Something went wrong. Please try again.', 'error');
+            });
+
+        });
+
+    });
+
+}
+
+function showToast(title, message, type) {
+    if (typeof $ !== "undefined" && $.toast) {
+        $.toast({
+            heading: title,
+            text: message,
+            showHideTransition: 'fade',
+            icon: type,
+            loaderBg: type === 'success' ? '#28a745' :
+                      type === 'warning' ? '#ffc107' : '#dc3545',
+            position: 'top-right'
+        });
+    }
+}
+
+function getCookie(name) {
+    let cookieValue = null;
+    if (document.cookie && document.cookie !== "") {
+        const cookies = document.cookie.split(";");
+        for (let i = 0; i < cookies.length; i++) {
+            const cookie = cookies[i].trim();
+            if (cookie.substring(0, name.length + 1) === (name + "=")) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+
+</script>
+{% endblock %}

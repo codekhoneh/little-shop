@@ -10,21 +10,6 @@
 
 $(document).ready(function(){
 
-    // Add to Wishlist Button Script
-    $('.wishlist').on('click', function(){
-        $.toast({
-            text: 'Product added to wishlist! <i class="ri-checkbox-circle-line ri-lg ri-middle ps-1"></i>',
-            showHideTransition: 'slide', 
-            allowToastClose: false, 
-            stack: false, 
-            position: 'bottom-right', 
-            bgColor: '#011627',
-            textColor: 'white',
-            loader: false,
-            hideAfter: 3000
-        });
-    });
-
     // Add to Cart Button Script
     $('.add-to-card').on('click', function(){
         $.toast({

@@ -150,68 +150,7 @@
 			<div class="row mt-4 mt-lg-5">
   {% for product in products %}
     <div class="col-md-4 mb-4">
-
-      <div class="product-card bg-white">
-        <div class="card-body p-4">
-
-          <!-- Actions -->
-          <div class="actions d-flex justify-content-end">
-            <div class="quick-view">
-              <i class="ri-eye-fill"></i>
-            </div>
-
-            <div class="add-to-card mx-2">
-              <i class="ri-shopping-bag-fill"></i>
-            </div>
-
-            <div class="wishlist">
-              <i class="ri-heart-fill"></i>
-            </div>
-          </div>
-
-          <!-- Image -->
-          <div class="card-image px-5 py-3 px-md-0 py-md-0 px-lg-5 py-lg-3 text-center">
-            {% if product.image %}
-              <a href="#">
-                <img src="{{ product.image.url }}"
-                     alt="{{ product.title }}"
-                     class="img-fluid"
-                     style="max-height:220px; object-fit:contain;">
-              </a>
-            {% endif %}
-          </div>
-
-          <!-- Info -->
-          <div class="pt-4 text-center position-relative">
-
-            <div class="card-label">
-              <div class="card-title h5 text-capitalize">
-                {{ product.title }}
-              </div>
-
-              {% if product.discount_percent %}
-                <div class="card-price text-danger">
-                  ${{ product.final_price }}
-                  <small class="text-muted text-decoration-line-through">
-                    ${{ product.price }}
-                  </small>
-                </div>
-              {% else %}
-                <div class="card-price">
-                  ${{ product.price }}
-                </div>
-              {% endif %}
-            </div>
-
-            <div class="card-desc text-muted small fw-light mt-3 text-truncate">
-              {{ product.description|truncatechars:60 }}
-            </div>
-
-          </div>
-
-        </div>
-      </div>
-
+      {% include "partials/_product_card.html" %}
     </div>
   {% empty %}
     <div class="col-12 text-center">
@@ -219,7 +158,6 @@
     </div>
   {% endfor %}
 </div>
-			
 		{% comment %} <--paginations--> {% endcomment %}
 					{% comment %} <--paginations--> {% endcomment %}
 <div class="row mt-3 mt-lg-5">
@@ -386,4 +324,4 @@
 		</div>
 		<!-- End Quick View Modal -->
 {% endblock %}
-	
+

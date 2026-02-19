@@ -1,6 +1,8 @@
+from django.conf import settings
 from django.db import models
 from django.utils.text import slugify
 from django.core.exceptions import ValidationError
+
 
 # --------------------
 # Product
@@ -85,3 +87,37 @@ class Collection(models.Model):
 
     def __str__(self):
         return f"{self.title_main} - {self.title_sub}"
+# -------------------------------------
+#             wishlist:
+# -------------------------------------
+
+class Wishlist(models.Model):
+    user = models.OneToOneField(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+        related_name="wishlist"
+    )
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.user}'s Wishlist"
+    
+    
+
+class WishlistItem(models.Model):
+    wishlist = models.ForeignKey(
+        Wishlist,
+        on_delete=models.CASCADE,
+        related_name="items"
+    )
+    product = models.ForeignKey(
+        Product,
+        on_delete=models.CASCADE
+    )
+    added_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        unique_together = ('wishlist', 'product') #جلوگیری از تکرار محصول در یک لیست خواسته‌ها
+
+    def __str__(self):
+        return f"{self.product.title} in {self.wishlist.user}'s Wishlist"
