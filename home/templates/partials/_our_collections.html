@@ -1,0 +1,42 @@
+	<!-- Categories Section -->
+<section class="categories mt-5">
+  <div class="container">
+    <div class="row mb-3">
+      <div class="col">
+        <h3 class="h4 text-color-auto">Our Collections:</h3>
+      </div>
+    </div>
+
+    <div class="row">
+      {% for c in our_collections %}
+      <div class="col-md-6 col-lg-3 mt-3 mt-lg-0">
+      <a href="{% url 'collection' c.slug %}" class="text-decoration-none">
+
+    {% if forloop.counter0|divisibleby:4 %}
+      <div class="bg-primary link-badge-wrapper p-5 rounded-lg text-white position-relative">
+    {% elif forloop.counter0|add:3|divisibleby:4 %}
+      <div class="bg-warning link-badge-wrapper p-5 rounded-lg text-white position-relative">
+    {% elif forloop.counter0|add:2|divisibleby:4 %}
+      <div class="bg-danger link-badge-wrapper p-5 rounded-lg text-white position-relative">
+    {% else %}
+<div style="background-color: #2edb3a;" class="link-badge-wrapper p-5 rounded-lg text-white position-relative">
+    {% endif %}
+
+        <span class="small">{{ c.title_sub }}</span>
+        <div class="h5">{{ c.title_main }}</div>
+
+        {% if c.image %}
+          <img src="{{ c.image.url }}" alt="{{ c.title_main }}" class="img-fluid" />
+        {% endif %}
+
+        <span class="link-badge">
+          <i class="ri-arrow-right-s-line"></i>
+        </span>
+      </div>
+  </a>
+</div>
+{% endfor %}
+    </div>
+  </div>
+</section>
+<!-- End Categories Section -->
